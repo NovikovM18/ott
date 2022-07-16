@@ -1,0 +1,44 @@
+
+.app {
+  padding: 40px;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 4rem;
+  background-color: blanchedalmond;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      padding: 20px;
+    }
+}
+
+.form {
+  padding: 20px;
+  width: 280px;
+  height: 320px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 4px;
+  @media (max-width: 768px) {
+    padding: 10px;
+  }
+}
+
+.box {
+  position: relative;
+  width: 300px;
+  height: 360px;
+  border: 1px solid black;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+.img {
+  position: absolute;
+  border-radius: 4px;
+  width: 200px;
+}
