@@ -1,5 +1,5 @@
-<div class="res">
-  <div class="box" *ngIf="dataFromForm">
+<div class="res" id="res">
+  <div class="box" *ngIf="dataFromForm" id="box">
     <a href={{dataFromForm.url}} target="_blank">
       <img
         [@imageAnimation]="animationState "
@@ -13,7 +13,7 @@
 
   <div class="controls">
     <div class="controls__item">
-      <label for="width">Image width</label>
+      <label for="width">Container width</label>
       <span>
         <input name="width" type="number" [formControl]="width" (change)="transformImage()">
         <select (change)="selectWs($event)" class="select">
@@ -23,10 +23,20 @@
     </div>
 
     <div class="controls__item">
-      <label for="height">Image height</label>
+      <label for="height">Container height</label>
       <span>
         <input name="height" type="number" [formControl]="height" (change)="transformImage()">
         <select (change)="selectHs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="radius">Container border radius</label>
+      <span>
+        <input name='radius' type="number" [formControl]="radius" (change)="transformImage()">
+        <select (change)="selectRs($event)" class="select">
           <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
         </select>
       </span>
@@ -53,19 +63,10 @@
     </div>
 
     <div class="controls__item">
-      <label for="radius">Image border radius</label>
-      <span>
-        <input name='radius' type="number" [formControl]="radius" (change)="transformImage()">
-        <select (change)="selectRs($event)" class="select">
-          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
-        </select>
-      </span>
-    </div>
-
-    <div class="controls__item">
       <label for="scale">Image scale</label>
       <input type="range" id="vol" name="scale" value="10" min="1" max="100" (change)="scaleImage($event)">
     </div>
   <button (click)="animationReset()">animate</button>
+  <button (click)="generateFile()">GDF</button>
   </div>
 </div>

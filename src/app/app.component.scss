@@ -23,8 +23,10 @@
   justify-content: space-evenly;
   background-color: rgb(234, 246, 243);
   border-radius: 12px;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       padding: 10px;
+      width: 50%;
+      margin: 0 auto;
     }
 }
 
@@ -39,4 +41,7 @@ label {
   height: 60px;
   background-color: rgb(201, 230, 228);
   border: 1px solid black;
+  &:hover {
+    cursor: pointer;
+  }
 }

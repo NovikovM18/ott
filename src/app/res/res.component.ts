@@ -64,8 +64,8 @@ export class ResComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.left = new FormControl(0);
     this.top = new FormControl(0);
-    this.width = new FormControl(250);
-    this.height = new FormControl(250);
+    this.width = new FormControl(320);
+    this.height = new FormControl(320);
     this.radius = new FormControl(4);
   }
 
@@ -89,12 +89,15 @@ export class ResComponent implements OnInit, OnChanges {
   
   transformImage() {
     const image = document.getElementById('image');
+    const box = document.getElementById('box');
     if(image) {
       image.style.left = this.left.value + this.left_sel;
       image.style.top = this.top.value + this.top_sel;
-      image.style.width = this.width.value + this.width_sel;
-      image.style.height = this.height.value + this.height_sel;
-      image.style.borderRadius = this.radius.value + this.radius_sel;
+    }
+    if(box) {
+      box.style.width = this.width.value + this.width_sel;
+      box.style.height = this.height.value + this.height_sel;
+      box.style.borderRadius = this.radius.value + this.radius_sel;
     }
   }
 
@@ -128,5 +131,13 @@ export class ResComponent implements OnInit, OnChanges {
   selectRs(event: any) {
     this.radius_sel = event.target.value;
     this.transformImage();
+  }
+
+  generateFile() {
+    const res = document.getElementById('res');
+    if(res) {
+      console.log(res.innerHTML);
+    }
+    
   }
 }
