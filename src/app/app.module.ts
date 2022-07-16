@@ -8,11 +8,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatSliderModule} from '@angular/material/slider';
+import { ResComponent } from './res/res.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ResComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,9 @@
 # Ott
 
+#TASK: 
+https://docs.google.com/document/d/1vu12AznPFwTi-2XzWdTVqy23aytDwUx-0sG-6SJhx9c/edit
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.0.
 
 ## Development server

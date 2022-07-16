@@ -1,0 +1,12 @@
+<div class="box" *ngIf="dataFromForm">
+  <a href={{dataFromForm.url}} target="_blank">
+    <img [src]="imagePreview" alt="image" class="img" id="image">
+  </a>
+</div>
+<div>
+  <input type="number" [formControl]="left" (change)="transformImage()">
+  <input type="number" [formControl]="top" (change)="transformImage()">
+  <!-- <label for="vol">Volume (between 0 and 50):</label> -->
+  <input type="range" id="vol" name="vol" value="10" min="1" max="100" (change)="scaleImage($event)">
+
+</div>

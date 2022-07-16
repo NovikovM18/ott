@@ -38,16 +38,5 @@
   </button>
   </form>
 
-  <div class="box" *ngIf="show">
-    <a href={{formData.value.url}} target="_blank">
-      <img *ngIf="this.formData.controls['image'].value" [src]="imagePreview" alt="image" class="img" id="image">
-    </a>
-  </div>
-  <div>
-    <input type="number" [formControl]="left" (change)="transformImage()">
-    <input type="number" [formControl]="top" (change)="transformImage()">
-    <!-- <label for="vol">Volume (between 0 and 50):</label> -->
-    <input type="range" id="vol" name="vol" value="10" min="1" max="100" (change)="f($event)">
-
-  </div>
+  <app-res *ngIf="show" [dataFromForm]="dataFromForm"></app-res>
 </div>
