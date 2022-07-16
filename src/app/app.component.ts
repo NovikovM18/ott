@@ -15,7 +15,7 @@ interface dataFromForm {
 export class AppComponent implements OnInit {
   formData!: FormGroup;
   dataFromForm!: dataFromForm;
-  animations = ['sdfsdf', 'sdfsdfdsf', 'sdfsdfsdf']
+  animations = ['from_left', 'from_right', 'from_up', 'from_down', 'scale'];
   show = false;
   
   constructor() {}
@@ -29,7 +29,7 @@ export class AppComponent implements OnInit {
   }
 
   uploadFile(event: any) {
-    const file = event.target.files[0];
+    const file = event.target.files[0];    
     this.formData.patchValue({image: file});
     this.formData.get('image')?.updateValueAndValidity();
   }
@@ -38,7 +38,6 @@ export class AppComponent implements OnInit {
     if (this.formData.valid) {
       this.dataFromForm = this.formData.value;
       this.show = true;
-      
     }
   }
 

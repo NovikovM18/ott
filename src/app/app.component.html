@@ -1,10 +1,12 @@
 <div class="app">
   <form class="form" [formGroup]="formData" #form="ngForm" (ngSubmit)="submitedForm()">
     <div>
-      <input type="file" (change)="uploadFile($event)">
+      <label for="fileInput">Add image</label>
+      <input type="file" (change)="uploadFile($event)" id="fileInput">
       <mat-error *ngIf="!this.formData.controls['image'].value">
         Image is <strong>required</strong>
       </mat-error>
+      <p *ngIf="this.formData.controls['image'].value">{{this.formData.controls['image'].value.name}}</p>
     </div>
     
     <mat-form-field class="form__input" appearance="fill">
@@ -34,7 +36,7 @@
     type="submit"
     [disabled]="!this.formData.valid"
     >
-    GO
+    APPLY
   </button>
   </form>
 

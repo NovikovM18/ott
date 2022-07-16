@@ -1,12 +1,71 @@
-<div class="box" *ngIf="dataFromForm">
-  <a href={{dataFromForm.url}} target="_blank">
-    <img [src]="imagePreview" alt="image" class="img" id="image">
-  </a>
-</div>
-<div>
-  <input type="number" [formControl]="left" (change)="transformImage()">
-  <input type="number" [formControl]="top" (change)="transformImage()">
-  <!-- <label for="vol">Volume (between 0 and 50):</label> -->
-  <input type="range" id="vol" name="vol" value="10" min="1" max="100" (change)="scaleImage($event)">
+<div class="res">
+  <div class="box" *ngIf="dataFromForm">
+    <a href={{dataFromForm.url}} target="_blank">
+      <img
+        [@imageAnimation]="animationState "
+        [src]="imagePreview" 
+        alt="image" 
+        class="img" 
+        id="image"
+      >
+    </a>
+  </div>
 
+  <div class="controls">
+    <div class="controls__item">
+      <label for="width">Image width</label>
+      <span>
+        <input name="width" type="number" [formControl]="width" (change)="transformImage()">
+        <select (change)="selectWs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="height">Image height</label>
+      <span>
+        <input name="height" type="number" [formControl]="height" (change)="transformImage()">
+        <select (change)="selectHs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="left">Position left</label>
+      <span>
+        <input name="left" type="number" [formControl]="left" (change)="transformImage()">
+        <select (change)="selectLs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="top">Position top</label>
+      <span>
+        <input name='top' type="number" [formControl]="top" (change)="transformImage()">
+        <select (change)="selectTs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="radius">Image border radius</label>
+      <span>
+        <input name='radius' type="number" [formControl]="radius" (change)="transformImage()">
+        <select (change)="selectRs($event)" class="select">
+          <option *ngFor="let sel of select" [value]="sel">{{sel}}</option>
+        </select>
+      </span>
+    </div>
+
+    <div class="controls__item">
+      <label for="scale">Image scale</label>
+      <input type="range" id="vol" name="scale" value="10" min="1" max="100" (change)="scaleImage($event)">
+    </div>
+  <button (click)="animationReset()">animate</button>
+  </div>
 </div>

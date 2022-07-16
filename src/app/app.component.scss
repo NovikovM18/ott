@@ -5,8 +5,8 @@
   min-height: 100vh;
   display: flex;
   gap: 4rem;
-  background-color: blanchedalmond;
-    @media (max-width: 768px) {
+  background-color: rgb(150, 155, 153);
+    @media (max-width: 1024px) {
       flex-direction: column;
       padding: 20px;
     }
@@ -19,10 +19,24 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  background-color: #fff;
-  border-radius: 4px;
-  @media (max-width: 768px) {
-    padding: 10px;
-  }
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: rgb(234, 246, 243);
+  border-radius: 12px;
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+}
+
+#fileInput {
+  display: none;
+}
+label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 60px;
+  background-color: rgb(201, 230, 228);
+  border: 1px solid black;
 }
