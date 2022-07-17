@@ -89,15 +89,12 @@ export class ResComponent implements OnInit, OnChanges {
   
   transformImage() {
     const image = document.getElementById('image');
-    const box = document.getElementById('box');
     if(image) {
       image.style.left = this.left.value + this.left_sel;
       image.style.top = this.top.value + this.top_sel;
-    }
-    if(box) {
-      box.style.width = this.width.value + this.width_sel;
-      box.style.height = this.height.value + this.height_sel;
-      box.style.borderRadius = this.radius.value + this.radius_sel;
+      image.style.borderRadius = this.radius.value + this.radius_sel;
+      image.style.width = this.width.value + this.width_sel;
+      image.style.height = this.height.value + this.height_sel;
     }
   }
 
@@ -134,10 +131,14 @@ export class ResComponent implements OnInit, OnChanges {
   }
 
   generateFile() {
-    const res = document.getElementById('res');
-    if(res) {
-      console.log(res.innerHTML);
-    }
-    
+    const box = document.getElementById('box');
+    if(box) {
+      const text = box.innerHTML
+      const blob = new Blob([text], {type: 'text/html'});      
+      const link = document.createElement('a');
+      link.setAttribute('href', URL.createObjectURL(blob));
+      link.setAttribute('download', 'result');
+      link.click();
+    } 
   }
 }

@@ -2,7 +2,12 @@
   <form class="form" [formGroup]="formData" #form="ngForm" (ngSubmit)="submitedForm()">
     <div>
       <label for="fileInput">Add image</label>
-      <input type="file" (change)="uploadFile($event)" id="fileInput">
+      <input 
+        type="file" 
+        (change)="uploadFile($event)" 
+        accept="image/*"
+        id="fileInput"
+      >
       <mat-error *ngIf="!this.formData.controls['image'].value">
         Image is <strong>required</strong>
       </mat-error>
