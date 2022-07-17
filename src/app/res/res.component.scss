@@ -10,7 +10,7 @@
   min-height: 400px;
   height: max-content;
     @media (max-width: 1024px) {
-      width: 94%;
+      width: 84%;
       flex-direction: column;
       padding: 10px;
     }
@@ -24,6 +24,10 @@
   align-items: center;
   justify-content: center;
   background-color: #fff;
+    @media (max-width: 768px) {
+      width: 260px;
+      height: 260px;
+    }
 }
 
 .img {
@@ -45,9 +49,12 @@
   gap: 1rem;
   padding: 10px;
   border-radius: 12px;
-  border: 1px solid black;
-  border-right: none;
-  border-top: none;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+    @media (max-width: 768px) {
+      position: relative;
+      border: 1px solid black;
+    }
   &__item {
     display: flex;
     flex-direction: column;
