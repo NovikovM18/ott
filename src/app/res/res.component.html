@@ -13,7 +13,7 @@
 
   <div class="controls">
     <div class="controls__item">
-      <label for="width">Container width</label>
+      <label for="width">Image width</label>
       <span>
         <input name="width" type="number" [formControl]="width" (change)="transformImage()">
         <select (change)="selectWs($event)" class="select">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="controls__item">
-      <label for="height">Container height</label>
+      <label for="height">Image height</label>
       <span>
         <input name="height" type="number" [formControl]="height" (change)="transformImage()">
         <select (change)="selectHs($event)" class="select">
